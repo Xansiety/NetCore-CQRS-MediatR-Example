@@ -1,6 +1,7 @@
 
 
 using CQRSMediatRExample.Context;
+using CQRSMediatRExample.MediatR.Behaviors;
 using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMediatR(typeof(Program)); // Code before NuggetPackage < 12
 //builder.Services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<Program>());  // Code for NuggetPackage >= 12
 builder.Services.AddSingleton<FakeDataStore>();
+builder.Services.AddSingleton(typeof(IPipelineBehavior<,>), typeof(LogginBehavior<,>));
 
 
 
