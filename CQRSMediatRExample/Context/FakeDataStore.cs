@@ -27,5 +27,11 @@ namespace CQRSMediatRExample.Context
         public async Task<IEnumerable<Product>> GetAllProducts() => await Task.FromResult(_products);
 
         public async Task<Product> GetProductById(int Id) => await Task.FromResult(_products.Single<Product>(p => p.Id == Id));
+
+        public async Task EventOccured(Product product, string evnt)
+        {
+            _products.Single(p => p.Id == product.Id).Name = $"{product.Name} event: {evnt}";
+            await Task.CompletedTask;
+        }
     }
 }
