@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "98cd09a9-4573-4190-8461-da4efe3b28e9",
+		"name": "CQRS-NET-CORE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25929496"
+	},
+	"item": [
+		{
+			"name": "getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7109/api/products",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7109",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7109/api/products/11",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7109",
+					"path": [
+						"api",
+						"products",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 11,\r\n    \"name\": \"Test Product 11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7109/api/products",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7109",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
